@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Submit Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="panel-page student-theme">
+    <div class="panel-orb panel-orb-a"></div>
+    <div class="panel-orb panel-orb-b"></div>
+    <div class="panel-orb panel-orb-c"></div>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <h1 class="topbar-title">Student Portal</h1>
+            <a href="/" class="ghost-btn">Logout</a>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <section class="panel-card glass-card">
+            <div class="panel-heading">
+                <h2>New Project Submission</h2>
+                <p>Fill details and upload your project file.</p>
+            </div>
+
+            <form action="/submit_project" method="POST" enctype="multipart/form-data" class="clean-form">
+                <div class="form-grid two-col">
+                    <label class="field-wrap">
+                        <span>Student Name</span>
+                        <input type="text" name="name" placeholder="Enter Full Name" required>
+                    </label>
+                    <label class="field-wrap">
+                        <span>Roll No / ID</span>
+                        <input type="text" name="roll_no" placeholder="E.g. CS-2026-01" required>
+                    </label>
+                </div>
+
+                <div class="form-grid two-col">
+                    <label class="field-wrap">
+                        <span>Branch</span>
+                        <select name="branch" required>
+                            <option selected disabled value="">Choose Branch...</option>
+                            <option>Computer Science Engineering</option>
+                            <option>Information Technology</option>
+                            <option>Electronics and Communication</option>
+                            <option>Mechanical Engineering</option>
+                            <option>Civil Engineering</option>
+                        </select>
+                    </label>
+                    <label class="field-wrap">
+                        <span>Semester</span>
+                        <select name="semester">
+                            <option>B.Tech - 8th Sem</option>
+                            <option>B.Tech - 6th Sem</option>
+                            <option>BCA / MCA</option>
+                        </select>
+                    </label>
+                </div>
+
+                <label class="field-wrap">
+                    <span>Project Title</span>
+                    <input type="text" name="title" placeholder="E.g. Smart Library Management" required>
+                </label>
+
+                <label class="field-wrap">
+                    <span>Project Description</span>
+                    <textarea name="description" rows="3" placeholder="Briefly explain your project..."></textarea>
+                </label>
+
+                <div class="form-grid two-col">
+                    <label class="field-wrap">
+                        <span>Submission Type</span>
+                        <select name="submission_type" id="submission_type" required>
+                            <option value="File">File Upload</option>
+                            <option value="GitHub">GitHub Link</option>
+                            <option value="URL">Project URL</option>
+                        </select>
+                    </label>
+                    <label class="field-wrap" id="submission_url_wrap" style="display:none;">
+                        <span>Project Link (GitHub/URL)</span>
+                        <input type="url" name="submission_url" id="submission_url" placeholder="https://github.com/username/repo">
+                    </label>
+                </div>
+
+                <label class="field-wrap">
+                    <span>Upload Project (ZIP / PDF)</span>
+                    <input type="file" name="project_file" id="project_file" accept=".zip,.rar,.pdf" required>
+                    <small>Submit your source code or project report.</small>
+                </label>
+
+                <button type="submit" class="solid-btn">Submit Project</button>
+            </form>
+        </section>
+
+        <section class="panel-card feedback-card glass-card">
+            <div class="panel-heading">
+                <h2>Teacher Feedback</h2>
+            </div>
+
+            {% if feedback %}
+            <div class="feedback-box">
+                <p><strong>Status:</strong>
+                    <span class="status-pill {{ 'status-approve' if feedback.status == 'Approve' else 'status-reject' }}">
+                        {{ feedback.status }}
+                    </span>
+                </p>
+                <p><strong>Marks:</strong> {{ feedback.marks }}/100</p>
+                <div class="comment-box">
+                    <strong>Comment:</strong> {{ feedback.comment }}
+                </div>
+            </div>
+            {% else %}
+            <div class="warn-box">No feedback yet. Please wait for the teacher to review.</div>
+            {% endif %}
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+

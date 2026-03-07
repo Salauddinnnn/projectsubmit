@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Project Portal - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <div class="bg-orb orb-c"></div>
+
+    <main class="login-shell">
+        <section class="intro-panel">
+            <p class="eyebrow">COER UNIVERSITY</p>
+            <h1>Project Review Portal</h1>
+            <p class="subtitle">One secure place for submission, evaluation, and feedback.</p>
+        </section>
+
+        <section class="cards-grid">
+            <article class="auth-card teacher-card">
+                <div class="card-glow"></div>
+                <p class="card-kicker">Faculty</p>
+                <h2>Teacher Login</h2>
+                <p class="card-copy">Review student projects, give marks, and publish feedback.</p>
+                <a href="/login/teacher" class="auth-btn btn-teacher">
+                    <span class="g-badge" aria-hidden="true">G</span>
+                    <span>Continue as Teacher</span>
+                </a>
+                <p class="card-note">Use your authorized campus account.</p>
+            </article>
+
+            <article class="auth-card student-card">
+                <div class="card-glow"></div>
+                <p class="card-kicker">Students</p>
+                <h2>Student Login</h2>
+                <p class="card-copy">Upload your project files and track teacher decisions.</p>
+                <a href="/login/student" class="auth-btn btn-student">
+                    <span class="g-badge" aria-hidden="true">G</span>
+                    <span>Continue as Student</span>
+                </a>
+                <p class="card-note">Sign in securely with Google.</p>
+            </article>
+        </section>
+    </main>
+
+    <div class="ground-shadow"></div>
+    <div class="secure-loader" id="secureLoader" aria-hidden="true">
+        <div class="loader-card" role="status" aria-live="polite">
+            <div class="loader-spinner" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="loader-title">CONNECTING TO SECURE SERVER</p>
+            <p class="loader-subtitle">Encrypting session and preparing Google sign-in...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+

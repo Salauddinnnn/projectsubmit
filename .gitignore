@@ -1,0 +1,9 @@
+.env
+edulink.db
+__pycache__/
+*.pyc
+.venv/
+venv/
+.vscode/
+.idea/
+*.log
