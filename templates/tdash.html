@@ -48,18 +48,18 @@
                     <tbody>
                     {% for project in projects %}
                         <tr>
-                            <td>{{ project.student_name }}</td>
-                            <td>{{ project.branch }}</td>
-                            <td>{{ project.project_title }}</td>
-                            <td>{{ project.roll_no }}</td>
-                            <td>{{ project.submission_type }}</td>
-                            <td class="file-cell">{{ project.display_name }}</td>
-                            <td>
+                            <td data-label="Name">{{ project.student_name }}</td>
+                            <td data-label="Branch">{{ project.branch }}</td>
+                            <td data-label="Project Title">{{ project.project_title }}</td>
+                            <td data-label="Roll No">{{ project.roll_no }}</td>
+                            <td data-label="Type">{{ project.submission_type }}</td>
+                            <td data-label="File Name" class="file-cell">{{ project.display_name }}</td>
+                            <td data-label="Status">
                                 <span class="status-pill {% if project.status == 'Approve' %}status-approve{% elif project.status == 'Reject' %}status-reject{% else %}status-submitted{% endif %}">
                                     {{ project.status }}
                                 </span>
                             </td>
-                            <td>
+                            <td data-label="Action">
                                 <div class="action-row">
                                     <a href="{{ project.url }}" class="mini-btn" target="_blank">
                                         {% if project.submission_type in ['GitHub', 'URL'] %}Open Link{% else %}View File{% endif %}
