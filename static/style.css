@@ -884,6 +884,32 @@ body.login-page {
         text-align: center;
     }
 
+    .eyebrow,
+    .intro-panel h1,
+    .subtitle {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cards-grid {
+        width: min(520px, 94vw);
+        margin: 0 auto;
+    }
+
+    .auth-card {
+        text-align: center;
+    }
+
+    .card-kicker,
+    .auth-card h2,
+    .card-copy,
+    .card-note {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .subtitle {
         margin: 0 auto;
     }
