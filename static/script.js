@@ -32,6 +32,14 @@ document.addEventListener("keydown", function (event) {
 const loginButtons = document.querySelectorAll(".login-page .auth-btn");
 const secureLoader = document.getElementById("secureLoader");
 
+function hideSecureLoader() {
+    if (!secureLoader) {
+        return;
+    }
+    secureLoader.classList.remove("is-visible");
+    document.body.style.overflow = "";
+}
+
 loginButtons.forEach(function (button) {
     button.addEventListener("click", function (event) {
         // Keep normal browser behavior for new-tab/window actions.
@@ -53,6 +61,15 @@ loginButtons.forEach(function (button) {
             window.location.href = targetUrl;
         }, delay);
     });
+});
+
+// If user returns with browser back/forward cache, ensure loader is reset.
+window.addEventListener("pageshow", hideSecureLoader);
+window.addEventListener("focus", hideSecureLoader);
+document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible") {
+        hideSecureLoader();
+    }
 });
 
 // Student submission mode toggle (File vs Link)
