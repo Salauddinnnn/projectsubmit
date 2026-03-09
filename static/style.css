@@ -319,8 +319,9 @@ body.login-page {
 .secure-loader {
     position: fixed;
     inset: 0;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(5, 16, 28, 0.72);
     backdrop-filter: blur(5px);
     opacity: 0;
@@ -337,6 +338,10 @@ body.login-page {
 }
 
 .loader-card {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: auto;
     border-radius: 0;
     padding: 0;
@@ -939,6 +944,9 @@ body.login-page {
         width: auto;
         padding: 0;
         border-radius: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .loader-spinner {
