@@ -337,9 +337,9 @@ body.login-page {
 }
 
 .loader-card {
-    width: min(320px, 78vw);
-    border-radius: 12px;
-    padding: 12px 10px;
+    width: min(180px, 46vw);
+    border-radius: 8px;
+    padding: 6px 5px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08));
@@ -347,9 +347,9 @@ body.login-page {
 }
 
 .loader-spinner {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto 8px;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto 4px;
     position: relative;
     transform-style: preserve-3d;
     animation: spin3d 1.15s linear infinite;
@@ -358,9 +358,9 @@ body.login-page {
 .loader-spinner span {
     position: absolute;
     inset: 0;
-    border-radius: 18px;
-    border: 3px solid transparent;
-    box-shadow: 0 0 22px rgba(64, 180, 255, 0.28);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 10px rgba(64, 180, 255, 0.28);
 }
 
 .loader-spinner span:nth-child(1) {
@@ -381,15 +381,15 @@ body.login-page {
 .loader-title {
     margin: 0;
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
+    font-size: 0.52rem;
+    letter-spacing: 0.03em;
     color: #d8ecfb;
 }
 
 .loader-subtitle {
-    margin: 4px 0 0;
-    font-size: 0.72rem;
-    line-height: 1.25;
+    margin: 2px 0 0;
+    font-size: 0.48rem;
+    line-height: 1.1;
     color: #b8d5ec;
 }
 
@@ -936,25 +936,25 @@ body.login-page {
 
 @media (max-width: 600px) {
     .loader-card {
-        width: 78vw;
-        padding: 10px 8px;
-        border-radius: 10px;
+        width: min(170px, 52vw);
+        padding: 5px 4px;
+        border-radius: 7px;
     }
 
     .loader-spinner {
-        width: 46px;
-        height: 46px;
-        margin-bottom: 7px;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 3px;
     }
 
     .loader-title {
-        font-size: 0.72rem;
-        letter-spacing: 0.04em;
+        font-size: 0.48rem;
+        letter-spacing: 0.02em;
     }
 
     .loader-subtitle {
-        font-size: 0.66rem;
-        line-height: 1.2;
+        font-size: 0.44rem;
+        line-height: 1.05;
     }
 }
 
