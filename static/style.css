@@ -337,9 +337,9 @@ body.login-page {
 }
 
 .loader-card {
-    width: min(380px, 86vw);
-    border-radius: 18px;
-    padding: 20px 16px;
+    width: min(320px, 78vw);
+    border-radius: 12px;
+    padding: 12px 10px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08));
@@ -347,9 +347,9 @@ body.login-page {
 }
 
 .loader-spinner {
-    width: 74px;
-    height: 74px;
-    margin: 0 auto 12px;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 8px;
     position: relative;
     transform-style: preserve-3d;
     animation: spin3d 1.15s linear infinite;
@@ -381,14 +381,15 @@ body.login-page {
 .loader-title {
     margin: 0;
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
     color: #d8ecfb;
 }
 
 .loader-subtitle {
-    margin: 8px 0 0;
-    font-size: 0.88rem;
+    margin: 4px 0 0;
+    font-size: 0.72rem;
+    line-height: 1.25;
     color: #b8d5ec;
 }
 
@@ -935,25 +936,25 @@ body.login-page {
 
 @media (max-width: 600px) {
     .loader-card {
-        width: 84vw;
-        padding: 16px 12px;
-        border-radius: 16px;
+        width: 78vw;
+        padding: 10px 8px;
+        border-radius: 10px;
     }
 
     .loader-spinner {
-        width: 64px;
-        height: 64px;
-        margin-bottom: 10px;
+        width: 46px;
+        height: 46px;
+        margin-bottom: 7px;
     }
 
     .loader-title {
-        font-size: 0.95rem;
-        letter-spacing: 0.08em;
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
     }
 
     .loader-subtitle {
-        font-size: 0.86rem;
-        line-height: 1.45;
+        font-size: 0.66rem;
+        line-height: 1.2;
     }
 }
 
